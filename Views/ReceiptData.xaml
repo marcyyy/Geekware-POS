@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="posproj.Views.ReceiptData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:posproj.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="35" d:DesignWidth="250" Background="White"  MinWidth="250" MinHeight="35" MaxWidth="250" MaxHeight="35">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10 1 0 0">
+            <TextBlock x:Name="nameTxt" Text="itemname" FontWeight="Regular" Margin="0 2 0 0" FontFamily="Helvetica" FontSize="12" Foreground="#0f110c" />
+            <StackPanel Orientation="Horizontal" Margin="15 0 0 0" >
+                <TextBlock x:Name="quantityTxt" Text="qty" FontWeight="Regular" FontFamily="Helvetica" FontSize="12" Foreground="#0f110c" />
+                <TextBlock Text=" x " FontWeight="Regular" FontFamily="Helvetica" FontSize="12" Foreground="#0f110c" />
+                <TextBlock x:Name="priceTxt" Text="price" FontWeight="Regular" FontFamily="Helvetica" FontSize="12" Foreground="#0f110c" />
+            </StackPanel>                                       
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="0 2 0 0">
+            <TextBlock x:Name="amountTxt" Text="amount" FontWeight="Regular" Margin="0 0 10 0" FontFamily="Helvetica" FontSize="12" Foreground="#0f110c" HorizontalAlignment="Right"/>
+        </StackPanel>
+
+
+    </Grid>
+</UserControl>

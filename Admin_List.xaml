@@ -1,0 +1,54 @@
+﻿<Window x:Class="posproj.Admin_List"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:posproj"
+        mc:Ignorable="d"
+        Width="850" Height="600" AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize" Icon="/Images/shop.png">
+
+    <Border Background="#232C33" CornerRadius="20" BorderThickness="3" BorderBrush="#0f110c"> 
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Margin="0 20 20 0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <Button Height="30" Width="30"  Content="✖" Foreground="#FAFAFA" FontSize="20" FontFamily="Helvetica" Background="Transparent" BorderBrush="Transparent" Click="CloseBtn"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="0" Margin="50 30 20 20">
+                
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Transaction #"  FontWeight="Regular" Margin="10,0,0,0" FontFamily="Montserrat" FontSize="20" Foreground="#FAFAFA" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Text="%trasnsacnum%" x:Name="refNumTxt"  FontWeight="Regular" Margin="0,0,0,0" FontFamily="Montserrat" FontSize="20" Foreground="#FAFAFA" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                    <TextBlock Text="Action Done:" FontWeight="Regular" Margin="10,0,0,0" FontFamily="Montserrat" FontSize="20" Foreground="#FAFAFA" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Text="%action%" x:Name="actionTxt" FontWeight="Regular" Margin="42,0,0,0" FontFamily="Montserrat" FontSize="20" Foreground="#FAFAFA" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+
+            </StackPanel>
+            
+            <StackPanel Grid.Row="1">
+                <Border Background="#FFEBEFF0" CornerRadius="10" Width="750" Height="430" Margin="0 20 0 0">
+                    <DataGrid x:Name="logsDatagrid" Margin="10" MaxColumnWidth="265" AlternatingRowBackground="#FFFAFAFA" 
+                              ColumnHeaderHeight="25" ColumnWidth="100" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding = "{Binding id}" Width="100"/>
+                            <DataGridTextColumn Header="Transaction #" Binding = "{Binding ref_num}" Width="150"/>
+                            <DataGridTextColumn Header="Item Name" Binding = "{Binding itemname}" Width="200"/>
+                            <DataGridTextColumn Header="Quantity" Binding = "{Binding quantity}" Width="150"/>
+                            <DataGridTextColumn Header="Amount" Binding = "{Binding amount}" Width="200"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+                
+            </StackPanel>
+            
+            
+        </Grid>
+    </Border>
+</Window>

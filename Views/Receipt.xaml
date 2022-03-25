@@ -1,0 +1,113 @@
+﻿<Window x:Class="posproj.Views.Receipt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:posproj.Views"
+        mc:Ignorable="d"
+        Title="Receipt" Height="650" Width="350"  WindowStyle="None" ResizeMode="NoResize" Icon="/Images/shop.png">
+    <Border >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="15"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition />
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Background="#323437"/>
+            <StackPanel Grid.Row="0" Grid.Column="1" Background="#323437"/>
+            <StackPanel Grid.Row="0" Grid.Column="2" Background="#323437"/>
+            <StackPanel Grid.Row="1" Grid.Column="0" Background="#323437"/>
+            <StackPanel Grid.Row="2" Grid.Column="0" Background="#323437"/>
+            <StackPanel Grid.Row="1" Grid.Column="2" Background="#323437"/>
+            <StackPanel Grid.Row="2" Grid.Column="1" Background="#323437"/>
+            <StackPanel Grid.Row="2" Grid.Column="2" Background="#323437"/>
+
+            <Grid Grid.Row="1" Grid.Column="1" x:Name="receiptGrid">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="15"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition />
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" Margin="0,10,0,0" >
+                    <Image Source="../Images/shop.png" Width="25"/>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="geekware" FontWeight="SemiBold" Margin="5,0,0,0" FontFamily="Montserrat" FontSize="20" Foreground="#0f110c" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text="sales receipt" FontWeight="Regular" Margin="45,-5,0,0" FontFamily="Montserrat" FontSize="10" Foreground="#0f110c" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock x:Name="dateTxt" FontWeight="Regular" Margin="0 5 0 0" FontFamily="Helvetica" FontSize="10" Foreground="#0f110c" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="transacNumTxt" Text="transacnum" FontWeight="Regular" Margin="0 2 0 0" FontFamily="Helvetica" FontSize="10" Foreground="#0f110c" HorizontalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 2 0 0" >
+                    <TextBlock Text="Cashier:  " FontWeight="Regular" FontFamily="Helvetica" FontSize="10" Foreground="#0f110c"/>
+                    <TextBlock x:Name="userTxt" Text="username" FontWeight="Regular" FontFamily="Helvetica" FontSize="10" Foreground="#0f110c"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" Margin="0 5 0 0 ">
+                <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" Margin="0 15 0 0 ">
+                    <Border Background="Transparent" CornerRadius="20" Width="285" Height="320" >
+                        <WrapPanel x:Name="stackItem" Orientation="Horizontal" Width="280" />
+                    </Border>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 -5 35 0" >
+                        <TextBlock Text="TOTAL:     " FontWeight="SemiBold" Margin="0 3 0 0" FontFamily="Helvetica" FontSize="15" Foreground="#0f110c" />
+                        <TextBlock x:Name="totalTxt" Text="totAmt" FontWeight="SemiBold" Margin="0 0 0 0" FontFamily="Helvetica" FontSize="15" Foreground="#0f110c"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 -5 35 0" >
+                        <TextBlock Text="Cash:     " FontWeight="Regular" Margin="0 5 0 0" FontFamily="Helvetica" FontSize="12" Foreground="#0f110c" />
+                        <TextBlock x:Name="cashTxt" Text="cashAmt" FontWeight="Regular" Margin="0 5 0 0" FontFamily="Helvetica" FontSize="12" Foreground="#0f110c"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 -5 35 0" >
+                        <TextBlock Text="Change:       " FontWeight="Regular" Margin="0 5 0 0" FontFamily="Helvetica" FontSize="12" Foreground="#0f110c" />
+                        <TextBlock x:Name="changeTxt" Text="change" FontWeight="Regular" Margin="0 5 0 0" FontFamily="Helvetica" FontSize="12" Foreground="#0f110c"/>
+                    </StackPanel>
+
+                </StackPanel>
+                
+                <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1" Margin="0 -25 0 0 ">
+                       <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="2" Margin="30 -10 0 0" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="../Images/aijm_logo.png" Width="50"/>
+                            <TextBlock Text="PUP Sta. Mesa" FontWeight="Regular" Margin="0 -2 0 0" FontFamily="Helvetica" FontSize="8" Foreground="#0f110c" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="25 0 0 10">
+                            <TextBlock Text="----------------------------------------" FontWeight="Regular" Margin="0 -2 0 0" FontFamily="Helvetica" FontSize="12" Foreground="#0f110c" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Signature" FontWeight="Regular" Margin="0 -2 0 0" FontFamily="Helvetica" FontSize="10" Foreground="#0f110c" HorizontalAlignment="Center"/>
+
+                        </StackPanel>
+                    </StackPanel>   
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <StackPanel Grid.Row="4" Grid.Column="2" Background="#323437" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="Print" Width="80" Height="28" FontSize="18" Margin="0 0 0 0" Click="printBtn"/>
+                    <Button Content="Close" Width="80" Height="28" FontSize="18" Margin="15 0 0 0" Click="closeBtn"/>
+                </StackPanel>
+            </Grid>
+            
+        </Grid>
+    </Border>
+</Window>
